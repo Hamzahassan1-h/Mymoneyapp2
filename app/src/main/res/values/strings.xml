@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Mymoneyapp</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+    <string name="everything_is_ok">everything is ok</string>
+    <string name="identification">Identification</string>
+    <string name="status">status</string>
+    <string name="capacity">Capacity</string>
+    <string name="details">Details</string>
+</resources>
