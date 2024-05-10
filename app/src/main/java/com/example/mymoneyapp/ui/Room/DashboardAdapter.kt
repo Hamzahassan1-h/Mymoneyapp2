@@ -1,4 +1,4 @@
-package com.example.mymoneyapp.ui.dashboard
+package com.example.mymoneyapp.ui.Room
 
 import android.view.LayoutInflater
 import android.view.View
@@ -24,6 +24,7 @@ class DashboardAdapter(
                 tvName.text = PersonModelItemModel.name
                 tvEmail.text = PersonModelItemModel.email
                 tvColor.text = PersonModelItemModel.favouriteColor
+
             }
         }
 

@@ -1,4 +1,4 @@
-package com.example.mymoneyapp.ui.home
+package com.example.mymoneyapp.ui.People
 
 import android.view.LayoutInflater
 import android.view.View

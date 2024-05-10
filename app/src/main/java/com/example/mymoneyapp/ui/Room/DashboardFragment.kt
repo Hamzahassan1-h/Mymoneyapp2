@@ -1,22 +1,19 @@
-package com.example.mymoneyapp.ui.home
+package com.example.mymoneyapp.ui.Room
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mymoneyapp.R
-import com.example.mymoneyapp.data.model.Room.RoomItemModel
-import com.example.mymoneyapp.databinding.FragmentHomeBinding
+import com.example.mymoneyapp.databinding.FragmentDashboardBinding
 
-class HomeFragment : Fragment() {
+class DashboardFragment : Fragment() {
 
-private var _binding: FragmentHomeBinding? = null
-
+private var _binding: FragmentDashboardBinding? = null
   private val binding get() = _binding!!
 
   override fun onCreateView(
@@ -24,29 +21,24 @@ private var _binding: FragmentHomeBinding? = null
     container: ViewGroup?,
     savedInstanceState: Bundle?
   ): View {
-    val homeViewModel =
-            ViewModelProvider(this).get(HomeViewModel::class.java)
+    val dashboardViewModel =
+            ViewModelProvider(this).get(DashboardViewModel::class.java)
 
-    _binding = FragmentHomeBinding.inflate(inflater, container, false)
+    _binding = FragmentDashboardBinding.inflate(inflater, container, false)
     val root: View = binding.root
 
-      binding.apply {
-          homeViewModel.roomList.observe(viewLifecycleOwner){
-              mvPerson.apply {
+      binding.apply{
+          dashboardViewModel.personList.observe(viewLifecycleOwner) {
+              rvPerson.apply {
                   layoutManager = LinearLayoutManager(context)
-                  adapter = HomeAdapter(it) {RoomItemModel ->
+                  adapter = DashboardAdapter(it) { PersonModelItemModel ->
                       findNavController().navigate(
-                          R.id.navigation_home
+                          R.id.navigation_dashboard
                       )
                   }
               }
           }
       }
-
-//    val textView: TextView = binding.textHome
-//    homeViewModel.text.observe(viewLifecycleOwner) {
-//      textView.text = it
-//    }
     return root
   }
 

@@ -37,6 +37,19 @@
         app:layout_constraintTop_toBottomOf="@+id/tvName"
         tools:text ="Title"
         android:textSize="16sp"/>
+    <TextView
+        android:id="@+id/tvFromName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="12dp"
+        android:layout_marginTop="4dp"
+        android:ellipsize="end"
+        android:maxLines="3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tvProfile"
+        app:layout_constraintTop_toBottomOf="@+id/tvName"
+        tools:text ="Title"
+        android:textSize="16sp"/>
 
     <TextView
         android:id="@+id/tvEmail"
@@ -46,7 +59,7 @@
         android:layout_marginTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/tvProfile"
-        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        app:layout_constraintTop_toBottomOf="@+id/tvFromName"
         tools:text ="Email"
         android:textSize="16sp"/>
 

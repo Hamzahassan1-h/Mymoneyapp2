@@ -1,4 +1,4 @@
-package com.example.mymoneyapp.ui.dashboard
+package com.example.mymoneyapp.ui.People
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -9,11 +9,12 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mymoneyapp.R
-import com.example.mymoneyapp.databinding.FragmentDashboardBinding
+import com.example.mymoneyapp.databinding.FragmentHomeBinding
 
-class DashboardFragment : Fragment() {
+class HomeFragment : Fragment() {
 
-private var _binding: FragmentDashboardBinding? = null
+private var _binding: FragmentHomeBinding? = null
+
   private val binding get() = _binding!!
 
   override fun onCreateView(
@@ -21,24 +22,29 @@ private var _binding: FragmentDashboardBinding? = null
     container: ViewGroup?,
     savedInstanceState: Bundle?
   ): View {
-    val dashboardViewModel =
-            ViewModelProvider(this).get(DashboardViewModel::class.java)
+    val homeViewModel =
+            ViewModelProvider(this).get(HomeViewModel::class.java)
 
-    _binding = FragmentDashboardBinding.inflate(inflater, container, false)
-    val root: View = binding.root
+    _binding = FragmentHomeBinding.inflate(inflater, container, false)
+    val root : View = binding.root
 
-      binding.apply{
-          dashboardViewModel.personList.observe(viewLifecycleOwner) {
-              rvPerson.apply {
+      binding.apply {
+          homeViewModel.roomList.observe(viewLifecycleOwner){
+              mvPerson.apply {
                   layoutManager = LinearLayoutManager(context)
-                  adapter = DashboardAdapter(it) { PersonModelItemModel ->
+                  adapter = HomeAdapter(it) {RoomItemModel ->
                       findNavController().navigate(
-                          R.id.navigation_dashboard
+                          R.id.navigation_home
                       )
                   }
               }
           }
       }
+
+//    val textView: TextView = binding.textHome
+//    homeViewModel.text.observe(viewLifecycleOwner) {
+//      textView.text = it
+//    }
     return root
   }
 

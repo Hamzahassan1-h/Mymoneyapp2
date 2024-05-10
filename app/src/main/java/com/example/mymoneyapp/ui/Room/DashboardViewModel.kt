@@ -1,4 +1,4 @@
-package com.example.mymoneyapp.ui.dashboard
+package com.example.mymoneyapp.ui.Room
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
