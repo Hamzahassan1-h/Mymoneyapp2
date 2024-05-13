@@ -9,8 +9,6 @@ import com.example.mymoneyapp.R
 import com.example.mymoneyapp.data.model.Room.RoomItemModel
 import com.example.mymoneyapp.databinding.ItemRoomBinding
 
-//import com.example.mymoneyapp.databinding.ItemRoomBinding
-
 class HomeAdapter(
     val roomList : List<RoomItemModel>,
     val function : (RoomItemModel) -> Unit

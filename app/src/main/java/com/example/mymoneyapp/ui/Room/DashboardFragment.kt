@@ -8,9 +8,12 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import dagger.hilt.android.AndroidEntryPoint
+
 import com.example.mymoneyapp.R
 import com.example.mymoneyapp.databinding.FragmentDashboardBinding
 
+@AndroidEntryPoint
 class DashboardFragment : Fragment() {
 
 private var _binding: FragmentDashboardBinding? = null

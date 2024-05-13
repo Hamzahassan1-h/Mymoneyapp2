@@ -6,9 +6,16 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.mymoneyapp.data.api.RetrofitInstance
 import com.example.mymoneyapp.data.model.People.PersonModelItemModel
+import com.example.mymoneyapp.repository.Repository
+import dagger.hilt.InstallIn
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class DashboardViewModel : ViewModel() {
+@HiltViewModel
+class DashboardViewModel @Inject constructor (
+    val repository: Repository
+) : ViewModel() {
 
 //    private val _text = MutableLiveData<String>().apply {
 //        value = "This is dashboard Fragment"

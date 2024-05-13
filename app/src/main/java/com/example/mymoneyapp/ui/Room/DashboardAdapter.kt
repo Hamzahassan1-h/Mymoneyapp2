@@ -7,6 +7,7 @@ import com.example.mymoneyapp.data.model.People.PersonModelItemModel
 import androidx.recyclerview.widget.RecyclerView.Adapter
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bumptech.glide.Glide
+
 import com.example.mymoneyapp.R
 import com.example.mymoneyapp.databinding.ItemPersonBinding
 
